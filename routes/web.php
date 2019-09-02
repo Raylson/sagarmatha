@@ -20,6 +20,6 @@ Route::get('/contact', 'FrontendController@contact');
 Route::post('/submit_contact', 'FrontendController@submitContact');
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
