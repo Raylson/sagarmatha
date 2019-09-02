@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@index');
+Route::get('/page/{slug}', 'FrontendController@page');
+Route::get('/products', 'FrontendController@products');
+Route::get('/product/{slug}', 'FrontendController@productDetail');
+Route::get('/gallery', 'FrontendController@gallery');
+Route::get('/contact', 'FrontendController@contact');
+Route::post('/submit_contact', 'FrontendController@submitContact');
 
 
 Route::group(['prefix' => 'admin'], function () {

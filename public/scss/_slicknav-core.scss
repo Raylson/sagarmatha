@@ -1,0 +1,132 @@
+.slicknav_btn {
+	position: absolute;
+	right: $spacer;
+	top: $spacer * 2.125;
+	display: block;
+	vertical-align: middle;
+	padding: $spacer $spacer * 1.25;
+	border: 2px solid $black;
+	line-height: 1.125em;
+	cursor: pointer;
+	font-weight: $font-weight-bold;
+	@include media('>=laptop') {
+		display: none;
+	}
+	@include media('<phone') {
+		padding: $spacer * 0.6 $spacer * 0.9;
+	}
+	.slicknav_icon-bar + .slicknav_icon-bar {
+		margin-top: 0.188em;
+	}
+}
+.slicknav_menu {
+	*zoom: 1;
+	position: relative;
+	z-index: 10;
+	.slicknav_menutxt {
+		display: block;
+		line-height: 1.188em;
+		float: left;
+		color: $black;
+	}
+	.slicknav_icon {
+		float: left;
+		width: 1.125em;
+		height: 0.875em;
+		margin: 0.188em 0 0 0.438em;
+		@include media('<phone') {
+			display: none;
+		}
+		&:before { // Firefox Mobile v42 bugfix
+			background: transparent;
+			width: 1.125em;
+			height: 0.875em;
+			display: block;
+			content: "";
+			position: absolute;
+		}
+	}
+	.slicknav_no-text {
+		margin: 0;
+	}
+	.slicknav_icon-bar {
+		display: block;
+		width: 1.125em;
+		height: 2px;
+		background: $black;
+	}
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+.slicknav_nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: $spacer * 6;
+	right: $spacer;
+	min-width: 200px;
+	padding: $spacer * 0.75 0;
+	background: $white;
+	box-shadow: 0 5px 15px transparentize($base, 0.75),
+							0 2px 5px transparentize($base, 0.75);
+	ul {
+		display: block;
+	}
+	li {
+		display: block;
+	}
+	.slicknav_arrow {
+		font-size: 0.8em;
+		margin: 0 0 0 0.4em;
+	}
+	.slicknav_item {
+		cursor: pointer;
+		a {
+			display: inline;
+		}
+	}
+	.slicknav_row {
+		display: block;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		padding: $spacer * 1.75 $spacer * 1.125;
+		color: $base-lighter;
+		transition: color 0.2s;
+		@include media('<laptop') {
+			padding: $spacer / 2 $spacer;
+			text-align: center;
+		}
+		&:hover {
+			text-decoration: none;
+			color: $base;
+			@include media('<laptop') {
+				background: $base;
+				color: $white;
+			}
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+
+	a {
+		display: block;
+	}
+	.slicknav_parent-link a {
+		display: inline;
+	}
+}
+.slicknav_brand {
+	float: left;
+}
